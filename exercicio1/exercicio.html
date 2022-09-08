@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhaskara</title>
+</head>
+
+<body>
+
+    <h1>Bhaskara</h1>
+
+    <form>
+
+        <label for="valorA">Insira o Valor de A</label> <br>
+        <input type="number"id="valorA"> <br>
+        <label for="valorB">Insira o Valor de B</label> <br>
+        <input type="number" id="valorB" > <br>
+        <label for="valorC">Insira o Valor de C</label> <br>
+        <input type="number" id="valorC"> <br>
+
+    </form>
+
+    <button onclick="calculo()">Calcular</button> <br>    
+
+    <div id="resultadox1"></div> <br>
+    <div id="resultadox2"></div> <br>
+
+    <script>
+
+        function calculo() {
+            const A = Number(document.getElementById("valorA").value);
+            const B = Number(document.getElementById("valorB").value);
+            const C = Number(document.getElementById("valorC").value);
+            const delta = B ** 2 - ((4 * A) * C) ;  
+            const contamais = (- B + Math.sqrt(delta)) / (2 * A)
+            const contamenos = (- B - Math.sqrt(delta)) / (2 * A)
+            document.getElementById("resultadox2").innerHTML = `x" = ${contamenos.toFixed(2)}`
+            document.getElementById("resultadox1").innerHTML = `x' = ${contamais.toFixed(2)}`
+        }
+    </script>
+
+</body>
+
+</html>
